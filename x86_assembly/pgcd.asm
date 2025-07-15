@@ -1,0 +1,26 @@
+%include "asm_io.asm"
+section .text
+global main
+main :
+        call read_int
+        mov ebx,eax
+        call read_int
+        mov ecx,eax
+        calc :
+                cmp ebx,ecx
+                je end
+                jl swap
+                mov eax,ebx
+                sub eax,ecx
+                mov ebx,eax
+        jmp calc
+swap :
+        xchg ebx,ecx
+        jmp calc
+end :
+        mov eax,ebx
+        call print_int
+        call print_nl
+        mov ebx,0
+        mov eax,1
+        int 0x80
