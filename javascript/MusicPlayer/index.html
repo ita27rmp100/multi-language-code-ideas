@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="icons/IconTab.png">
+    <title>Music Player</title>
+</head>
+<body class="bg-dark d-flex d-2 m-2">
+    <nav class="container d-flex justify-content-center align-items-center player ">
+        <div class="card p-2 m-2 bg-light text-dark h-100">
+            <img src="wallpapers/Where_you_are.jpeg" alt="Music's background" class="bg-dark p-d" id="SongWallpaper" width="250px">
+            <div class="card-body bodyCard">
+                <section class="d-block">
+                    <h3 class="card-title m-0" id="title">Where you are</h3>
+                    <h5 class="text-muted" id="sub-title">Halal Beats</h5>
+                </section>
+                <audio id="song">
+                    <source src="audios/Where_you_are.mp3" type="audio/mpeg" id="SongSource">
+                </audio>
+                <input type="range" value="0" id="progress">
+                <hr class="d-2">
+                <div class="d-flex justify-content-between">
+                <button class="btn" onclick="ChangeAudio('next')">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button class="btn" onclick="PlayPause()">
+                    <i class="fas fa-play" id="playPause"></i>
+                </button>
+                <button class="btn" onclick="ChangeAudio('prev')">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
